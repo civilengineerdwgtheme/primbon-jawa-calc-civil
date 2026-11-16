@@ -1,0 +1,54 @@
+{
+  "name": "primbon-jawa-calc-civil",
+  "productName": "Primbon Jawa & Calc Civil",
+  "version": "8.14.6",
+  "description": "Aplikasi desktop kalender dan perhitungan Primbon Jawa, zodiak dan shio, ibadah, serta kalkulator teknik sipil.",
+  "main": "main.js",
+  "author": "Tito Reista <tito.reista@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^45.3.3",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.titoreista.primbonjawacore",
+    "productName": "Primbon Jawa & Calc Civil",
+    "directories": {
+      "output": "release-final"
+    },
+    "files": [
+      "main.js",
+      "app/**/*",
+      "package.json",
+      "LICENSE",
+      "README.md",
+      "PRIVACY.md",
+      "THIRD_PARTY_NOTICES.md",
+      "CORE-EDITION.md"
+    ],
+    "win": {
+      "electronLanguages": [
+        "en-US",
+        "id"
+      ],
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "build-assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "Primbon-Jawa-Calc-Civil-${version}-portable.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

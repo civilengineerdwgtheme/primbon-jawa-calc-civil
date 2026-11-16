@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Browser Dalam-Aplikasi — Primbon Jawa & Calc Civil</title>
+  <style>
+    :root{color-scheme:dark;--ink:#f5ecd8;--muted:#baa987;--gold:#d4ac57;--gold-bright:#f0d18a;--edge:#4b3c25;--panel:#211a11;--field:#120f0b}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;overflow:hidden}
+    body{font:14px "Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--panel)}
+    .toolbar{height:76px;padding:10px 14px;display:grid;grid-template-columns:auto minmax(120px,1fr) auto;grid-template-rows:30px 18px;gap:5px 12px;align-items:center;border-bottom:1px solid var(--edge);background:linear-gradient(180deg,#2b2114,#1d170f)}
+    .controls{display:flex;align-items:center;gap:5px}
+    button{height:30px;min-width:32px;padding:0 9px;border:1px solid var(--edge);border-radius:7px;color:var(--ink);background:#302516;font:inherit;cursor:pointer}
+    button:hover:not(:disabled){background:#49371c;border-color:#876a36}
+    button:disabled{opacity:.45;cursor:default}
+    .nav{font-size:16px}
+    form{display:flex;gap:7px;min-width:0}
+    input{height:34px;width:100%;min-width:0;padding:0 12px;border:1px solid #62502f;border-radius:8px;outline:none;background:var(--field);color:#fff;font:14px "Segoe UI",Arial,sans-serif}
+    input:focus{border-color:var(--gold);box-shadow:0 0 0 2px #d4ac5728}
+    .go{height:34px;min-width:58px;background:#76551e;border-color:#a37b31;font-weight:600}
+    .home{min-width:38px;font-size:16px}
+    .status{grid-column:1 / -1;display:flex;align-items:center;gap:7px;min-width:0;color:var(--muted);font-size:11px}
+    .dot{width:7px;height:7px;flex:0 0 auto;border-radius:50%;background:#61ad70}
+    .dot.loading{background:var(--gold);animation:pulse 1s infinite alternate}
+    #pageTitle{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    @keyframes pulse{to{opacity:.35}}
+    @media(max-width:600px){.toolbar{padding-inline:8px;gap:4px 6px}.controls{gap:3px}button{min-width:29px;padding-inline:6px}.home{display:none}}
+  </style>
+</head>
+<body>
+  <header class="toolbar" aria-label="Kontrol browser">
+    <div class="controls">
+      <button class="nav" id="back" type="button" title="Kembali" aria-label="Kembali" disabled>&larr;</button>
+      <button class="nav" id="forward" type="button" title="Maju" aria-label="Maju" disabled>&rarr;</button>
+      <button class="nav" id="reload" type="button" title="Muat ulang" aria-label="Muat ulang">&#8635;</button>
+    </div>
+    <form id="addressForm">
+      <input id="address" type="text" inputmode="url" autocomplete="off" spellcheck="false" aria-label="Alamat web atau pencarian" placeholder="Masukkan alamat web atau kata kunci">
+      <button class="go" type="submit">Buka</button>
+    </form>
+    <button class="home" id="home" type="button" title="Halaman pencarian" aria-label="Halaman pencarian">&#8962;</button>
+    <div class="status" aria-live="polite"><span class="dot" id="dot"></span><span id="pageTitle">Siap menjelajah web</span></div>
+  </header>
+  <script src="browser-ui.js"></script>
+</body>
+</html>
