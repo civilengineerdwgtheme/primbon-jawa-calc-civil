@@ -36,6 +36,10 @@ Core calculations run on the device. Available online features may contact weath
 
 Project code is licensed under the MIT License; see [LICENSE](LICENSE). This license covers only code authored for this project. Unverified third-party content has been excluded from this package. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [CORE-EDITION.md](CORE-EDITION.md).
 
+## Code signing policy
+
+This project intends to apply to the SignPath Foundation Open Source Software program. It has not yet received approval, and the current Windows portable executable is unsigned. See the [Code signing policy](CODE_SIGNING_POLICY.md) for the planned release-signing process and current status.
+
 The application icon was created from the icon supplied for this release.
 
 ## About
